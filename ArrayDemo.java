@@ -11,11 +11,17 @@ public class ArrayDemo{
       {0, 1, 2, 0},
       {4, 0, 6, 7}
     };
+    int[][] testArray4 = {
+      {0, -1, 2, 0},
+      {4, 0, 6, -7}
+    };
     //printArray(testArray1);
     //printArray(testArray2);
     //System.out.println(countZeros2D(testArray3));
-    fill2D(testArray3);
-    printArray(testArray3);
+    //fill2D(testArray3);
+    //printArray(testArray3);
+    printArray(fill2DCopy(testArray4));
+
 
   }
 
@@ -66,4 +72,18 @@ public class ArrayDemo{
        }
     }
   }
+
+// Create new array except all negatives are changed to 3
+  public static int[][] fill2DCopy(int[][] vals){
+    int[][] output = new int[vals.length][];
+    for (int i = 0; i < vals.length; i++) {
+      output[i] = new int[vals[i].length];
+       for (int x = 0; x < vals[i].length; x++) {
+         if (vals[i][x] < 0) output[i][x] = 3;
+         else output[i][x] = vals[i][x];
+       }
+     }
+     return output;
+   }
+
 }
