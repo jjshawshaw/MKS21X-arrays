@@ -13,7 +13,10 @@ public class ArrayDemo{
     };
     //printArray(testArray1);
     //printArray(testArray2);
-    System.out.println(countZeros2D(testArray3));
+    //System.out.println(countZeros2D(testArray3));
+    fill2D(testArray3);
+    printArray(testArray3);
+
   }
 
   // print 1d array
@@ -50,5 +53,17 @@ public class ArrayDemo{
        }
      }
     return output;
+  }
+
+// Replace all the of values with 1's
+// EXCEPT when the row number is the same as the column number:
+// you must fill those with 3's instead.
+  public static void fill2D(int[][] vals){
+    for (int i = 0; i < vals.length; i++) {
+       for (int x = 0; x < vals[i].length; x++) {
+         if (i != x) vals[i][x] = 1;
+         else vals[i][x] = 3;
+       }
+    }
   }
 }
