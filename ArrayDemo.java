@@ -80,7 +80,7 @@ public class ArrayDemo{
       output[i] = new int[vals[i].length];
        for (int x = 0; x < vals[i].length; x++) {
          if (vals[i][x] < 0) output[i][x] = 3;
-         else output[i][x] = vals[i][x];
+         else output[i][x] = 1;
        }
      }
      return output;
